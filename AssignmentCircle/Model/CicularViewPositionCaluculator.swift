@@ -29,7 +29,7 @@ final class CicularViewPositionCaluculator {
     private var transformCache: [CGAffineTransform] = []
     private var previousTime: Date?
     private var mode: Mode = .clockwise
-    private(set) var isClockwise: Bool = true
+    private var isClockwise: Bool = true
 
     // MARK: - Lifecycle
 
@@ -70,9 +70,32 @@ final class CicularViewPositionCaluculator {
         previousTime = Date()
     }
 
+    /// 回転を開始する. `isClockwise`に応じて回転方向を決める.
+    func startRotating() {
+        if isClockwise {
+            self.mode = .clockwise
+        } else {
+            self.mode = .counterclockwise
+        }
+    }
+
+    /// Modeを`manual`に変更して回転を停止する. その時点での座標をキャッシュする.
+    func stopRotating() {
+        guard self.mode != .manual else {
+            return
+        }
+
+        self.mode = .manual
+        transformCache = (0..<iconCount).map(calculateAffineTransform(for:))
+    }
+
     /// Modeを変更する. `manual`を指定した場合その時点での座標をキャッシュする.
     /// - Parameter mode: アニメーションのモード
     func change(mode: Mode) {
+        guard self.mode != mode else {
+            return
+        }
+
         self.mode = mode
         if mode == .manual {
             transformCache = (0..<iconCount).map(calculateAffineTransform(for:))

@@ -46,6 +46,8 @@ final class ViewController: UIViewController {
         for (index, url) in Const.imageURLs.enumerated() {
             let imageView = UserIconImageView(size: Const.iconSize) { [weak self] sender in
                 self?.handlePan(sender, index: index)
+            } longPressHandler: { [weak self] sender in
+                self?.handleLongPress(sender)
             }
             imageView.center = view.center
             if let url = URL(string: url) {
@@ -71,17 +73,24 @@ final class ViewController: UIViewController {
     private func handlePan(_ sender: UIPanGestureRecognizer, index: Int) {
         switch sender.state {
         case .began:
-            calculator.change(mode: .manual)
+            calculator.stopRotating()
         case .changed:
             let translation = sender.translation(in: view)
 
             calculator.updateAngle(by: translation, index: index)
         default:
-            if calculator.isClockwise {
-                calculator.change(mode: .clockwise)
-            } else {
-                calculator.change(mode: .counterclockwise)
-            }
+            calculator.startRotating()
+        }
+    }
+
+    private func handleLongPress(_ sender: UILongPressGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            calculator.stopRotating()
+        case .ended:
+            calculator.startRotating()
+        default:
+            break
         }
     }
 }
