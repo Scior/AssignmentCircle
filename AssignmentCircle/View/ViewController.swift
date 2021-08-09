@@ -10,24 +10,24 @@ import UIKit
 final class ViewController: UIViewController {
     private enum Const {
         static let circleRadius: CGFloat = UIScreen.main.bounds.width * 0.4
-        static let iconCount = 6
+        static let iconSize: CGFloat = UIScreen.main.bounds.width * 0.16
+        static let imageURLs: [String] = [
+            "https://firebasestorage.googleapis.com/v0/b/android-technical-exam.appspot.com/o/user1.png?alt=media",
+            "https://firebasestorage.googleapis.com/v0/b/android-technical-exam.appspot.com/o/user2.png?alt=media",
+            "https://firebasestorage.googleapis.com/v0/b/android-technical-exam.appspot.com/o/user3.png?alt=media",
+            "https://firebasestorage.googleapis.com/v0/b/android-technical-exam.appspot.com/o/user4.png?alt=media",
+            "https://firebasestorage.googleapis.com/v0/b/android-technical-exam.appspot.com/o/user5.png?alt=media",
+            "https://firebasestorage.googleapis.com/v0/b/android-technical-exam.appspot.com/o/user6.png?alt=media"
+        ]
     }
 
     private var iconViews: [UserIconImageView] = []
     private let circularGuideView = CircularGuideView()
     private let calculator = CicularViewPositionCaluculator(
         circleRadius: Const.circleRadius,
-        iconCount: Const.iconCount,
+        iconCount: Const.imageURLs.count,
         speed: 0.1
     )
-    private let imageURLs: [String] = [
-        "https://firebasestorage.googleapis.com/v0/b/android-technical-exam.appspot.com/o/user1.png?alt=media",
-        "https://firebasestorage.googleapis.com/v0/b/android-technical-exam.appspot.com/o/user2.png?alt=media",
-        "https://firebasestorage.googleapis.com/v0/b/android-technical-exam.appspot.com/o/user3.png?alt=media",
-        "https://firebasestorage.googleapis.com/v0/b/android-technical-exam.appspot.com/o/user4.png?alt=media",
-        "https://firebasestorage.googleapis.com/v0/b/android-technical-exam.appspot.com/o/user5.png?alt=media",
-        "https://firebasestorage.googleapis.com/v0/b/android-technical-exam.appspot.com/o/user6.png?alt=media"
-    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +43,8 @@ final class ViewController: UIViewController {
             circularGuideView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
 
-        for (index, url) in imageURLs.enumerated() {
-            let imageView = UserIconImageView(size: 50) { [weak self] sender in
+        for (index, url) in Const.imageURLs.enumerated() {
+            let imageView = UserIconImageView(size: Const.iconSize) { [weak self] sender in
                 self?.handlePan(sender, index: index)
             }
             imageView.center = view.center
