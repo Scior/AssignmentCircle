@@ -29,6 +29,10 @@ final class ViewController: UIViewController {
         speed: 0.1
     )
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
