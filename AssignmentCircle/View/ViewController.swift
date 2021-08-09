@@ -23,7 +23,7 @@ final class ViewController: UIViewController {
 
     private var iconViews: [UserIconImageView] = []
     private let circularGuideView = CircularGuideView()
-    private let calculator = CicularViewPositionCaluculator(
+    private let calculator = CicularViewPositionCalculator(
         circleRadius: Const.circleRadius,
         iconCount: Const.imageURLs.count,
         speed: 0.1

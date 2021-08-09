@@ -14,7 +14,7 @@
 		EF77B37E26BE7C9100AE7F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF77B37D26BE7C9100AE7F64 /* Assets.xcassets */; };
 		EF77B38126BE7C9100AE7F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF77B37F26BE7C9100AE7F64 /* LaunchScreen.storyboard */; };
 		EF77B38A26BE7CD100AE7F64 /* UserIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF77B38926BE7CD100AE7F64 /* UserIconImageView.swift */; };
-		EF77B38C26BE817A00AE7F64 /* CicularViewPositionCaluculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF77B38B26BE817A00AE7F64 /* CicularViewPositionCaluculator.swift */; };
+		EF77B38C26BE817A00AE7F64 /* CicularViewPositionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF77B38B26BE817A00AE7F64 /* CicularViewPositionCalculator.swift */; };
 		EF77B38E26BE8DFF00AE7F64 /* CircularGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF77B38D26BE8DFF00AE7F64 /* CircularGuideView.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,7 @@
 		EF77B38026BE7C9100AE7F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF77B38226BE7C9100AE7F64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF77B38926BE7CD100AE7F64 /* UserIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIconImageView.swift; sourceTree = "<group>"; };
-		EF77B38B26BE817A00AE7F64 /* CicularViewPositionCaluculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CicularViewPositionCaluculator.swift; sourceTree = "<group>"; };
+		EF77B38B26BE817A00AE7F64 /* CicularViewPositionCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CicularViewPositionCalculator.swift; sourceTree = "<group>"; };
 		EF77B38D26BE8DFF00AE7F64 /* CircularGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularGuideView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +87,7 @@
 		EF77B38F26C122FD00AE7F64 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EF77B38B26BE817A00AE7F64 /* CicularViewPositionCaluculator.swift */,
+				EF77B38B26BE817A00AE7F64 /* CicularViewPositionCalculator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF77B38C26BE817A00AE7F64 /* CicularViewPositionCaluculator.swift in Sources */,
+				EF77B38C26BE817A00AE7F64 /* CicularViewPositionCalculator.swift in Sources */,
 				EF77B38A26BE7CD100AE7F64 /* UserIconImageView.swift in Sources */,
 				EF77B37926BE7C8E00AE7F64 /* ViewController.swift in Sources */,
 				EF77B37526BE7C8E00AE7F64 /* AppDelegate.swift in Sources */,

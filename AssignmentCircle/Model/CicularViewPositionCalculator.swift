@@ -1,5 +1,5 @@
 //
-//  CicularViewPositionCaluculator.swift
+//  CicularViewPositionCalculator.swift
 //  AssignmentCircle
 //
 //  Created by Fujino Suita on 2021/08/07.
@@ -8,7 +8,7 @@
 import CoreGraphics
 import Foundation
 
-final class CicularViewPositionCaluculator {
+final class CicularViewPositionCalculator {
     // MARK: - Properties
 
     enum Mode {
