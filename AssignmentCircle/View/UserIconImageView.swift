@@ -29,6 +29,7 @@ final class UserIconImageView: UIImageView {
 
         isUserInteractionEnabled = true
         backgroundColor = .gray
+        contentMode = .scaleAspectFill
         layer.cornerRadius = size / 2
 
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan(_:)))
