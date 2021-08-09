@@ -122,7 +122,7 @@ final class CicularViewPositionCalculator {
         let diffAngle = newAngle - previousAngle
         // 指を離した瞬間などに起きやすい、細かい動きは無視する. (閾値を変えることで感度を調整できる)
         if cos(diffAngle) < 1 - 1e-4 {
-            isClockwise = Int(floor(diffAngle / .pi)) % 2 == 0
+            isClockwise = sin(diffAngle) > 0
         }
     }
 }
